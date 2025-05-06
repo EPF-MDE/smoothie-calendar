@@ -19,6 +19,7 @@ export {
     DayGrid,
     Interaction,
     List,
+    TreeResourceTimeGrid,
     ResourceTimeGrid,
     ResourceTimeline,
     TimeGrid

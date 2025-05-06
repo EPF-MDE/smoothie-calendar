@@ -19,6 +19,7 @@ export default defineConfig(({command, mode, isSsrBuild, isPreview}) => {
                     formats: ['iife'],
                     cssFileName: 'event-calendar.min',
                 },
+                minify:false,
                 outDir: 'packages/build/dist',
                 sourcemap: true
             }
