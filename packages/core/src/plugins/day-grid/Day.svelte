@@ -8,7 +8,7 @@
     import Event from './Event.svelte';
     import Popup from './Popup.svelte';
 
-    let {date, chunks, bgChunks, longChunks, iChunks = [], dates} = $props();
+    let { date, chunks, bgChunks, longChunks, iChunks = [], dates, resource } = $props();
 
     let {
         date: currentDate, dayMaxEvents, highlightedDates, firstDay, moreLinkContent, theme, validRange, weekNumbers,
@@ -63,7 +63,7 @@
 
     // dateFromPoint
     onMount(() => {
-        setPayload(el, () => ({allDay: true, date, resource: undefined, dayEl: el, disabled}));
+        setPayload(el, () => ({allDay: true, date, resource, dayEl: el, disabled}));
     });
 
     // Popup

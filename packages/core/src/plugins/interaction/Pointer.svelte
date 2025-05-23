@@ -17,7 +17,7 @@
 
         if (dayEl) {
             let {allDay, date, resource, disabled} = getPayload(dayEl)(x, y);
-            if (!disabled) {
+            if (!disabled && resource) {
                 let idx = allDay ? 2 : 1;
 
                 if (!$_iEvents[idx]) {
