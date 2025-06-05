@@ -21,15 +21,7 @@
     import Event from "./Event.svelte";
     import Popup from "./Popup.svelte";
 
-    let {
-        date,
-        chunks,
-        bgChunks,
-        longChunks,
-        iChunks = [],
-        dates,
-        resource,
-    } = $props();
+    let { date, chunks, bgChunks, longChunks, iChunks = [], dates, resource } = $props();
 
     let {
         date: currentDate,
@@ -105,13 +97,7 @@
 
     // dateFromPoint
     onMount(() => {
-        setPayload(el, () => ({
-            allDay: true,
-            date,
-            resource,
-            dayEl: el,
-            disabled,
-        }));
+        setPayload(el, () => ({allDay: true, date, resource, dayEl: el, disabled}));
     });
 
     // Popup
