@@ -12,7 +12,7 @@
 <div class="{$theme.header}">
     <Section>
         {#each $_viewDates as date}
-            <div class="{$theme.day} {$theme.weekdays?.[date.getUTCDay()]}" role="columnheader">
+            <div class="{$theme.superpo} {$theme.day} {$theme.weekdays?.[date.getUTCDay()]}" role="columnheader">
                 <time
                     datetime="{toISOString(date, 10)}"
                     aria-label="{$_intlDayHeaderAL.format(date)}"

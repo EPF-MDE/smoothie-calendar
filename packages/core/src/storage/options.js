@@ -21,7 +21,7 @@ export function createOptions(plugins) {
             dateStyle: 'full'
         },
         displayEventEnd: true,
-        duration: {weeks: 1},
+        duration: { weeks: 1 },
         events: [],
         eventAllUpdated: undefined,
         eventBackgroundColor: undefined,
@@ -109,7 +109,8 @@ export function createOptions(plugins) {
             toolbar: 'ec-toolbar',
             view: '',
             weekdays: ['ec-sun', 'ec-mon', 'ec-tue', 'ec-wed', 'ec-thu', 'ec-fri', 'ec-sat'],
-            withScroll: 'ec-with-scroll'
+            withScroll: 'ec-with-scroll',
+            superpo: 'superpo'
         },
         titleFormat: {
             year: 'numeric',

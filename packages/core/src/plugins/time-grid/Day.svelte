@@ -70,11 +70,12 @@
     onMount(() => {
         setPayload(el, dateFromPoint);
     });
+    let isFirstColumn = $derived($resources[0] === resource);
 </script>
 
 <div
     bind:this={el}
-    class="{$theme.day} {$theme.weekdays?.[date.getUTCDay()]}{isToday ? ' ' + $theme.today : ''}{highlight ? ' ' + $theme.highlight : ''}{disabled ? ' ' + $theme.disabled : ''}"
+    class={`${$theme.day} ${$theme.weekdays?.[date.getUTCDay()]}${isToday ? ' ' + $theme.today : ''}${highlight ? ' ' + $theme.highlight : ''}${disabled ? ' ' + $theme.disabled : ''}${isFirstColumn ? ' ' + $theme.superpo : ''} ${$theme.view === 'resourceTimeGridDay' ? 'day-view' : ''}`}
     role="cell"
     onpointerdown={!disabled ? $_interaction.action?.select : undefined}
 >

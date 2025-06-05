@@ -61,11 +61,25 @@
     }
 
     export function addEvent(event) {
+    if (event.group === 'CM') {
+        const base = { ...event }; // copie de base
+
+        const forDEA1 = createEvents([{ ...base, group: 'DEA1' }])[0];
+        const forDEA2 = createEvents([{ ...base, group: 'DEA2' }])[0];
+
+        $_events.push(forDEA1, forDEA2);
+        $_events = $_events;
+
+        return [toEventWithLocalDates(forDEA1), toEventWithLocalDates(forDEA2)];
+    } else {
         event = createEvents([event])[0];
         $_events.push(event);
         $_events = $_events;
+
         return toEventWithLocalDates(event);
     }
+}
+
 
     export function updateEvent(event) {
         for (let e of $_events) {

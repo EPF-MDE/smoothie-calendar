@@ -57,10 +57,10 @@
   align-items: center;
   margin-bottom: 1em;
 
-  > * {
+  >* {
     margin-bottom: -.5em;
 
-    > * {
+    >* {
       margin-bottom: .5em;
 
       &:not(:last-child) {
@@ -92,7 +92,7 @@
     background-color: var(--ec-button-active-bg-color);
     border-color: var(--ec-button-active-border-color);
     color: var(--ec-button-active-text-color);
-    z-index: 1;  // make all borders visible
+    z-index: 1; // make all borders visible
   }
 }
 
@@ -166,6 +166,7 @@
 
     .ec-days {
       border-top-style: solid;
+      border-bottom: 1px solid var(--ec-border-color);
     }
   }
 
@@ -256,6 +257,7 @@
 
   &.ec-disabled {
     position: relative;
+
     &:after {
       content: '';
       position: absolute;
@@ -323,7 +325,7 @@
   border-radius: 3px;
   font-size: .85em;
   line-height: 1.5;
-  z-index: 1;  // put it above the pointer event (for multi-day events in month view)
+  z-index: 1; // put it above the pointer event (for multi-day events in month view)
 
   .ec-day-grid &,
   .ec-all-day & {
@@ -527,12 +529,29 @@
   }
 }
 
-.ec-dragging, .ec-dragging * {
-  cursor: pointer!important;
+.ec-dragging,
+.ec-dragging * {
+  cursor: pointer !important;
 }
-.ec-resizing-y, .ec-resizing-y * {
-  cursor: ns-resize!important;
+
+.ec-resizing-y,
+.ec-resizing-y * {
+  cursor: ns-resize !important;
 }
-.ec-resizing-x, .ec-resizing-x * {
-  cursor: ew-resize!important;
+
+.ec-resizing-x,
+.ec-resizing-x * {
+  cursor: ew-resize !important;
+}
+
+.ec-resource-week-view .superpo {
+  position: absolute;
+  width: 14%;
+}
+
+.ec-resource-day-view .superpo {
+
+  position: absolute;
+  width:
+    95%;
 }
