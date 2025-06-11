@@ -544,14 +544,48 @@
   cursor: ew-resize !important;
 }
 
-.ec-resource-week-view .superpo {
+/* Pour la vue semaine avec ressources */
+.ec-resource-week-view .superpoFirst {
   position: absolute;
   width: 14%;
+  /* Largeur normale d'une colonne jour */
 }
 
-.ec-resource-day-view .superpo {
-
+.ec-resource-week-view .superpoSecond {
   position: absolute;
-  width:
-    95%;
+  width: 7.25%;
+  /* Moitié de la première colonne */
+
+  /* Commence juste après la première colonne */
+}
+
+.ec-resource-week-view .superpoThird {
+  position: absolute;
+  width: 7.25%;
+  /* Moitié de la première colonne */
+  margin-left: 6.75%;
+  /* Commence après la première colonne + la seconde */
+}
+
+/* Pour la vue jour avec ressources */
+.ec-resource-day-view .superpoFirst {
+  position: absolute;
+  width: 100%;
+  /* Largeur normale pour une colonne jour */
+}
+
+.ec-resource-day-view .superpoSecond {
+  position: absolute;
+  width: 47.75%;
+  /* Moitié de la première colonne */
+  left: 5.35%;
+  /* Commence au début */
+}
+
+.ec-resource-day-view .superpoThird {
+  position: absolute;
+  width: 47.75%;
+  /* Moitié de la première colonne */
+  left: 52.65%;
+  /* Commence au milieu */
 }

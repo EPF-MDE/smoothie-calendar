@@ -110,7 +110,9 @@ export function createOptions(plugins) {
             view: '',
             weekdays: ['ec-sun', 'ec-mon', 'ec-tue', 'ec-wed', 'ec-thu', 'ec-fri', 'ec-sat'],
             withScroll: 'ec-with-scroll',
-            superpo: 'superpo'
+            superpoFirst: 'superpoFirst',
+            superpoSecond: 'superpoSecond',
+            superpoThird: 'superpoThird'
         },
         titleFormat: {
             year: 'numeric',
