@@ -108,9 +108,9 @@
         <div class="cm-row">
     {#each $_viewDates as date}
         <div class="cm-pair">
-            {#each $_viewResources.filter(r => r.id.startsWith('1')) as cmresource}
+                {#each $_viewResources.filter(r => r.extendedProps && r.extendedProps.level === '1') as cmResource}
                 <div class="cm-cell">
-                    <Label resource={cmresource} date={date} />
+                    <Label resource={cmResource} date={date} />
                 </div>
             {/each}
         </div>
@@ -121,7 +121,7 @@
               {#each $_viewDates as date}
                 <div class="dea-pair">
                   
-                  {#each $_viewResources.filter(r => r.id.startsWith('2')) as resource}
+                    {#each $_viewResources.filter(r => r.extendedProps && r.extendedProps.level === '2') as resource}
 
                     <div class="dea-cell">
                       <Label resource={resource} date={date} />
@@ -134,7 +134,7 @@
             <div class="tp-row">
                 {#each $_viewDates as date}
                     <div class="tp-pair">
-                        {#each $_viewResources.filter(r => r.id.startsWith('TP')) as tpResource}
+                        {#each $_viewResources.filter(r => r.extendedProps && r.extendedProps.level === '3') as tpResource}
                             <div class="tp-cell">
                                 <Label resource={tpResource} date={date} />
                             </div>
