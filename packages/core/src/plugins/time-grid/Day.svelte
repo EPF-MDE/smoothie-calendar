@@ -11,7 +11,7 @@
     let {date, resource = undefined} = $props();
 
     let {_events, _iEvents, highlightedDates, nowIndicator, slotDuration, slotHeight, filterEventsWithResources, theme,
-        resources, validRange, _interaction, _today, _slotTimeLimits} = getContext('state');
+        resources, validRange, _interaction, _today, _slotTimeLimits, _viewResources} = getContext('state');
 
     let el = $state();
 
@@ -71,15 +71,17 @@
         setPayload(el, dateFromPoint);
     });
     
-    let isFirstColumn = $derived($resources[0] === resource);
-    let isSecondColumn = $derived($resources[1] === resource);
-    let isThirdColumn = $derived($resources[2] === resource);
+    let customCssClass = $derived(resource?.extendedProps?.custom_css);
+    let deaCount = $derived($_viewResources.filter(r => r.extendedProps?.level === '2').length);
+    let deaIndex = $derived($_viewResources.indexOf(resource));
+    let viewClass = $derived($theme.view === 'resourceTimeGridDay' ? 'day-view' : '');
 </script>
 
 <div
     bind:this={el}
-    class={`${$theme.day} ${$theme.weekdays?.[date.getUTCDay()]}${isToday ? ' ' + $theme.today : ''}${highlight ? ' ' + $theme.highlight : ''}${disabled ? ' ' + $theme.disabled : ''}${isFirstColumn ? ' ' + $theme.superpoFirst : ''}${isSecondColumn ? ' ' + $theme.superpoSecond : ''}${isThirdColumn ? ' ' + $theme.superpoThird : ''} ${$theme.view === 'resourceTimeGridDay' ? 'day-view' : ''}`}
+    class={`${$theme.day} ${$theme.weekdays?.[date.getUTCDay()]}${isToday ? ' ' + $theme.today : ''}${highlight ? ' ' + $theme.highlight : ''}${disabled ? ' ' + $theme.disabled : ''} ${customCssClass ? customCssClass : ''} ${viewClass} ec-resource-${$theme.view?.replace('resourceTimeGrid', '').toLowerCase()}-view`}
     role="cell"
+    style={`--index: ${deaIndex}; --count: ${deaCount};`}
     onpointerdown={!disabled ? $_interaction.action?.select : undefined}
 >
     <div class="{$theme.bgEvents}">

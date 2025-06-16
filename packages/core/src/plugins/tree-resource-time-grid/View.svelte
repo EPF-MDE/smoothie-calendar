@@ -30,7 +30,10 @@
     }
 
     .cm-cell {
+        
         flex: 1;
+        width: calc(100% / var(--count));
+
         text-align: center;
         padding: 4px 0;
         border-right: 1px solid var(--ec-border-color);
@@ -104,18 +107,18 @@
                     </div>
                 {/each}
             </div>
-
-        <div class="cm-row">
-    {#each $_viewDates as date}
-        <div class="cm-pair">
-                {#each $_viewResources.filter(r => r.extendedProps && r.extendedProps.level === '1') as cmResource}
-                <div class="cm-cell">
-                    <Label resource={cmResource} date={date} />
+        <div class="cm-row" style={`--count: ${$_viewDates.length};`}>
+            {#each $_viewDates as date}
+                <div class="cm-pair">
+                    {#each $_viewResources.filter(r => r.extendedProps && r.extendedProps.level === '1') as cmResource}
+                        <div class="cm-cell">
+                            <Label resource={cmResource} date={date} />
+                        </div>
+                    {/each}
                 </div>
             {/each}
         </div>
-    {/each}
-</div>
+        
 
             <div class="dea-row">
               {#each $_viewDates as date}

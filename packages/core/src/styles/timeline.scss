@@ -27,6 +27,7 @@
 
     .ec-days {
       flex-shrink: 0;
+
       &:not(:last-child) {
         flex-grow: 0;
       }
@@ -46,6 +47,7 @@
       flex-direction: column;
 
       &:first-child {
+
         .ec-day-head,
         .ec-time:first-child {
           border: none;
@@ -64,7 +66,8 @@
 
   .ec-times {
     display: flex;
-    border-top: 1px solid var(--ec-border-color);;
+    border-top: 1px solid var(--ec-border-color);
+    ;
   }
 
   .ec-time {
@@ -76,7 +79,8 @@
     text-overflow: ellipsis;
   }
 
-  .ec-time, .ec-line {
+  .ec-time,
+  .ec-line {
     width: 72px;
   }
 
@@ -88,6 +92,8 @@
 
   .ec-event {
     position: absolute;
+
+
   }
 
   .ec-bg-event {
@@ -130,12 +136,14 @@
     .ec-resource {
       padding: 0 8px;
       flex-shrink: 0;
+
       &:not(:last-child) {
         flex-grow: 0;
         border-bottom: 1px solid var(--ec-border-color);
       }
+
       &:last-child {
-        flex-basis: 100%!important;  // for vertical scroll needs
+        flex-basis: 100% !important; // for vertical scroll needs
       }
 
       span {

@@ -228,6 +228,7 @@
 
 .ec-resource {
   display: flex;
+  position: relative;
 }
 
 .ec-days {
@@ -327,6 +328,7 @@
   line-height: 1.5;
   z-index: 1; // put it above the pointer event (for multi-day events in month view)
 
+
   .ec-day-grid &,
   .ec-all-day & {
     position: relative;
@@ -363,6 +365,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+
 
   .ec-day-grid &,
   .ec-all-day &,
@@ -485,7 +488,7 @@
   position: relative;
   height: 100%;
   overflow: hidden;
-  margin-left: -6.5px;
+
   user-select: none;
 }
 
@@ -544,48 +547,28 @@
   cursor: ew-resize !important;
 }
 
+
+
 /* Pour la vue semaine avec ressources */
-.ec-resource-week-view .superpoFirst {
-  position: absolute;
-  width: 14%;
-  /* Largeur normale d'une colonne jour */
+.ec-resource-week-view .superpo_1 {
+
+  width: 100%;
+  /* 7 days in one week */
 }
 
-.ec-resource-week-view .superpoSecond {
-  position: absolute;
-  width: 7.25%;
-  /* Moitié de la première colonne */
-
-  /* Commence juste après la première colonne */
-}
-
-.ec-resource-week-view .superpoThird {
-  position: absolute;
-  width: 7.25%;
-  /* Moitié de la première colonne */
-  margin-left: 6.75%;
-  /* Commence après la première colonne + la seconde */
+.ec-resource-week-view .superpo_2 {
+  width: calc(100% / var(--count));
+  /* Count of resources */
 }
 
 /* Pour la vue jour avec ressources */
-.ec-resource-day-view .superpoFirst {
-  position: absolute;
+.ec-resource-day-view .superpo_1 {
+
   width: 100%;
-  /* Largeur normale pour une colonne jour */
 }
 
-.ec-resource-day-view .superpoSecond {
-  position: absolute;
-  width: 47.75%;
-  /* Moitié de la première colonne */
-  left: 5.35%;
-  /* Commence au début */
-}
+.ec-resource-day-view .superpo_2 {
 
-.ec-resource-day-view .superpoThird {
-  position: absolute;
-  width: 47.75%;
-  /* Moitié de la première colonne */
-  left: 52.65%;
-  /* Commence au milieu */
+  width: calc(100% / var(--count));
+
 }
