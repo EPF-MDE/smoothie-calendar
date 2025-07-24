@@ -21,5 +21,6 @@ export {
     List,
     ResourceTimeGrid,
     ResourceTimeline,
-    TimeGrid
+    TimeGrid,
+    TreeResourceTimeGrid
 } from './index.svelte.js';
