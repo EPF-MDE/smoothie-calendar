@@ -6,16 +6,16 @@ export default {
     createOptions(options) {
         options.datesAboveResources = false;
         // Common options
-        options.buttonText.resourceTimeGridDay = 'resources';
-        options.buttonText.resourceTimeGridWeek = 'resources';
-        options.view = 'resourceTimeGridWeek';
-        options.views.resourceTimeGridDay = {
+        options.buttonText.treeResourceTimeGridDay = 'Planning Day';
+        options.buttonText.treeResourceTimeGridWeek = 'Planning Week';
+        options.view = 'treeResourceTimeGridWeek';
+        options.views.treeResourceTimeGridDay = {
             buttonText: btnTextDay,
             component: View,
             duration: {days: 1},
             theme: themeView('ec-time-grid ec-resource-day-view')
         };
-        options.views.resourceTimeGridWeek = {
+        options.views.treeResourceTimeGridWeek = {
             buttonText: btnTextWeek,
             component: View,
             duration: {weeks: 1},
