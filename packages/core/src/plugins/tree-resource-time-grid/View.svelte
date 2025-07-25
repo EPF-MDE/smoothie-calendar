@@ -1,7 +1,8 @@
 <script>
     import {getContext} from 'svelte';
     import {setContent, toISOString} from '#lib';
-    import {Section, Body, Day, Week} from '../time-grid/index.js';
+    import {Section, Body, Week} from '../time-grid/index.js';
+    import Day from './Day.svelte';
     import Label from './Label.svelte';
 
     let {
@@ -37,8 +38,8 @@
 
     .ec-resource {
         position: relative;
-        height: 100%;
     }
+
 </style>
 
 <div class="{$theme.header}">
@@ -80,12 +81,10 @@
     {#each $_viewDates as date}
         <div class="{$theme.resource}">
             {#each $_viewResources as resource}
-            <div id="column-{resource.title}" class="{(resource.extendedProps.show_column == 1)?$theme.resource+' shown':'stacked'}">
                 <Day
                     date={date}
                     resource={resource}
                 />
-            </div>
             {/each}
         </div>
     {/each}
